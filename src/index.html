@@ -8,19 +8,18 @@
   </head>
   <body class="h-screen">
     <!-- Global container -->
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen bg-gray-50">
       <!-- Card container -->
-      <div class="flex flex-col bg-white rounded-lg h-screen lg:h-full border-2 w-full lg:max-w-7xl  m-2">
+      <div class="flex flex-col bg-white rounded-lg h-screen lg:h-full border-2 w-full lg:max-w-7xl  m-2 shadow-lg">
         <!-- Title of page -->
         <div class="w-full text-center text-3xl lg:text-6xl p-4">My Team Randomizer</div>
 
         <!-- Players and results-->
-        <div class="h-72 w-100 m-1 flex flex-col lg:flex-row items-center justify-between flex-1">
+        <div class="h-72 w-100 flex flex-col lg:flex-row   justify-between flex-1 bg-slate-100">
           <!-- Player input and list -->
           <div class="flex flex-col w-full lg:w-1/2 h-full p-5 items-center">
             <!-- Input form -->
-            <form id="item-form" class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 items-center justify-center">
-              
+            <form id="player-form" class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 items-center justify-center">
               <div class="flex items-center justify-center space-x-2 lg:space-x-4 ">
                 <input
                 type="text"
@@ -43,35 +42,41 @@
                 </button>
             </form> 
 
-            <div class="grid grid-cols-3 lg:grid-cols-4 w-full text-center m-2 overflow-auto gap-2">
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-              <div class="border flex justify-around items-center">Xavier Olivares <i class="fa-solid fa-user-xmark  text-red-600"></i></div>
-
+            <div id="player-list" class="grid grid-cols-3 lg:grid-cols-4 w-full text-center m-2 overflow-auto gap-2">
             </div>
           </div>
           <!-- Player results -->
-          <div class=" border-l-2 border-gray-200 flex flex-col w-full lg:w-1/2 h-full p-5 items-center overflow-auto">
-            <div class="grid grid-cols-2 w-full h-full text-center gap-2">
+          <div class=" border-l-2 border-gray-300 flex flex-col w-full lg:w-1/2 h-full p-5 items-center overflow-auto">
+            <div id="shuffle-results" class="grid grid-cols-2 w-full h-full text-center gap-2">
 
               <div class="flex flex-col border border-red-400 bg-red-300 rounded items-center justify-center p-1 ">
+                <h1 class="text-xl font-bold p-1">Team 1</h1>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+              </div>
+
+              <div class="flex flex-col border border-yellow-400 bg-yellow-300 rounded items-center justify-center p-1 ">
+                <h1 class="text-xl font-bold p-1">Team 1</h1>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+              </div>
+
+              <div class="flex flex-col border border-blue-400 bg-blue-300 rounded items-center justify-center p-1 ">
+                <h1 class="text-xl font-bold p-1">Team 1</h1>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+                <p>Xavier Olivares</p>
+              </div>
+
+              <div class="flex flex-col border border-green-400 bg-green-300 rounded items-center justify-center p-1 ">
                 <h1 class="text-xl font-bold p-1">Team 1</h1>
                 <p>Xavier Olivares</p>
                 <p>Xavier Olivares</p>
@@ -85,14 +90,31 @@
         </div>
 
         <!-- Options -->
-        <div class="h-24 border border-black m-1 ">
-  
+        <div class="min-h-24 flex justify-center items-center pb-4">
+          <form class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10">
+            <fieldset>
+              <legend class="text-center">Shuffle type</legend>
+            
+              <input type="radio" name="shuffle" value="random" id="random_shuffle" checked="checked">
+              <label for="random_shuffle">Random shuffle</label>
+            
+              <input type="radio" name="shuffle" value="bySex" id="sex_shuffle">
+              <label for="sex_shuffle">Shuffle by sex</label>
+            
+            </fieldset>
+            <div>
+              <legend>Number of teams:</legend>
+              <!-- <label for="quantity">Number of teams:</label> -->
+              <input type="number" value="2" id="quantity" name="quantity" min="1" max="4" class="bg-slate-100 w-full">
+            </div>
+
+
+            <input type="submit" value="Submit" class="rounded-md  p-3 bg-gradient-to-r from-cyan-500 to-blue-200">
+          </form>
+
         </div>
       </div>
     </div>
-    
-    <!-- @todo Modal with input for Player name and sex -->
-    <!-- @todo Main card with list of players on the left and randomized teams on the right -->
-    <!-- @todo Footer of card with options for num of teams and random sort or sort with male/female split equally -->
+  
   </body>
 </html>
