@@ -20,7 +20,6 @@ class PlayerList {
       this.list.splice(index, 1);
       Storage.removePlayer(id);
       this._displayPlayerList();
-      console.log('Player removed');
     }
   }
 
@@ -34,7 +33,7 @@ class PlayerList {
         'player',
         'border',
         'flex',
-        'justify-around',
+        'justify-between',
         'items-center',
         'bg-white',
         'p-1'
@@ -42,11 +41,62 @@ class PlayerList {
       PlayerEl.innerHTML = `<span>${player.name}</span> <button class="delete-button px-3 py-1"><i class="fa-solid fa-xmark fa-lg text-red-600"></i></button>`;
       PlayerListEl.appendChild(PlayerEl);
     });
-    console.log('Players loaded...');
   }
 
-  //   @todo shuffleListAll()
-  //   @todo shuffleListBySex()
+  splitIntoTeams(list, numberOfTeams) {
+    const teams = Array.from({ length: numberOfTeams }, () => []);
+    list.forEach((player, index) => {
+      teams[index % numberOfTeams].push(player.name);
+    });
+    console.log(teams);
+    this.displayTeams(teams);
+    return teams;
+  }
+
+  shuffleListAll(list) {
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    console.log(list);
+    return list;
+  }
+
+  displayTeams(teams) {
+    const ResultsEl = document.getElementById('shuffle-results');
+    ResultsEl.innerHTML = '';
+    let teamCount = 1;
+
+    // Create team element for each team in list
+    teams.forEach((team) => {
+      const TeamEl = document.createElement('div');
+      TeamEl.classList.add(
+        'flex',
+        'flex-col',
+        'border',
+        'border-red-400',
+        'bg-red-300',
+        'rounded',
+        'items-center',
+        'justify-center',
+        'p-1'
+      );
+      const TeamNameEl = document.createElement('h1');
+      TeamNameEl.classList.add('text-xl', 'font-bold', 'p-1');
+      TeamNameEl.innerText = `Team ${teamCount}`;
+      teamCount++;
+      TeamEl.appendChild(TeamNameEl);
+
+      // Add players to team element
+      team.forEach((player) => {
+        const playerName = document.createElement('p');
+        playerName.innerText = player;
+        TeamEl.appendChild(playerName);
+      });
+
+      ResultsEl.appendChild(TeamEl);
+    });
+  }
 }
 
 export default PlayerList;

@@ -15,6 +15,9 @@ class App {
     document
       .getElementById('player-list')
       .addEventListener('click', this._removePlayer.bind(this));
+    document
+      .getElementById('options-form')
+      .addEventListener('submit', this._shuffleSubmit.bind(this));
   }
 
   _playerSubmit(e) {
@@ -41,6 +44,22 @@ class App {
         );
       }
     }
+  }
+
+  _shuffleSubmit(e) {
+    e.preventDefault();
+    const shuffleType = document.querySelector(
+      'input[name="shuffle"]:checked'
+    ).value;
+    const numberOfTeams = document.getElementById('numberOfTeams').value;
+
+    if (shuffleType === 'random') {
+      this._list.splitIntoTeams(
+        this._list.shuffleListAll(this._list.list),
+        numberOfTeams
+      );
+    }
+    console.log(shuffleType, numberOfTeams);
   }
 }
 
