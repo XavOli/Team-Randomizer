@@ -58,6 +58,11 @@ class App {
         this._list.shuffleListAll(this._list.list),
         numberOfTeams
       );
+    } else {
+      this._list.splitIntoTeams(
+        this._list.shuffeListBySex(this._list.list),
+        numberOfTeams
+      );
     }
     console.log(shuffleType, numberOfTeams);
   }

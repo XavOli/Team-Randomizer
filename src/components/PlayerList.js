@@ -4,7 +4,9 @@ import Storage from './Storage';
 class PlayerList {
   constructor() {
     this.list = Storage.getPlayers();
+    console.log(this.list);
     this._displayPlayerList();
+    this.shuffeListBySex(this.list);
   }
 
   addPlayerToList(name, sex) {
@@ -29,15 +31,7 @@ class PlayerList {
     this.list.forEach((player) => {
       const PlayerEl = document.createElement('div');
       PlayerEl.setAttribute('data-id', `${player.id}`);
-      PlayerEl.classList.add(
-        'player',
-        'border',
-        'flex',
-        'justify-between',
-        'items-center',
-        'bg-white',
-        'p-1'
-      );
+      PlayerEl.classList.add('player');
       PlayerEl.innerHTML = `<span>${player.name}</span> <button class="delete-button px-3 py-1"><i class="fa-solid fa-xmark fa-lg text-red-600"></i></button>`;
       PlayerListEl.appendChild(PlayerEl);
     });
@@ -58,7 +52,15 @@ class PlayerList {
       const j = Math.floor(Math.random() * (i + 1));
       [list[i], list[j]] = [list[j], list[i]];
     }
-    console.log(list);
+    return list;
+  }
+
+  shuffeListBySex(list) {
+    let maleList = list.filter((player) => player.sex === 'male');
+    let femaleList = list.filter((player) => player.sex === 'female');
+    list = this.shuffleListAll(maleList).concat(
+      this.shuffleListAll(femaleList)
+    );
     return list;
   }
 
@@ -67,20 +69,11 @@ class PlayerList {
     ResultsEl.innerHTML = '';
     let teamCount = 1;
 
+    // @todo Different color for each team
     // Create team element for each team in list
     teams.forEach((team) => {
       const TeamEl = document.createElement('div');
-      TeamEl.classList.add(
-        'flex',
-        'flex-col',
-        'border',
-        'border-red-400',
-        'bg-red-300',
-        'rounded',
-        'items-center',
-        'justify-center',
-        'p-1'
-      );
+      TeamEl.classList.add('team-el');
       const TeamNameEl = document.createElement('h1');
       TeamNameEl.classList.add('text-xl', 'font-bold', 'p-1');
       TeamNameEl.innerText = `Team ${teamCount}`;
