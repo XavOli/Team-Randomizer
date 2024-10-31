@@ -6,7 +6,6 @@ class Storage {
     } else {
       playerList = JSON.parse(localStorage.getItem('playerList'));
     }
-    console.log(playerList);
     return playerList;
   }
 
