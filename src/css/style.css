@@ -7,5 +7,5 @@
 }
 
 .team-el {
-  @apply flex flex-col border border-red-400 bg-red-300 rounded items-center justify-center p-1;
+  @apply flex flex-col border  rounded items-center justify-center p-1;
 }

@@ -4,7 +4,6 @@ import Storage from './Storage';
 class PlayerList {
   constructor() {
     this.list = Storage.getPlayers();
-    console.log(this.list);
     this._displayPlayerList();
     this.shuffeListBySex(this.list);
   }
@@ -32,7 +31,11 @@ class PlayerList {
       const PlayerEl = document.createElement('div');
       PlayerEl.setAttribute('data-id', `${player.id}`);
       PlayerEl.classList.add('player');
-      PlayerEl.innerHTML = `<span>${player.name}</span> <button class="delete-button px-3 py-1"><i class="fa-solid fa-xmark fa-lg text-red-600"></i></button>`;
+      PlayerEl.innerHTML = `<span><i class="fa-solid ${
+        player.sex === 'male' ? 'fa-mars' : 'fa-venus'
+      }"></i> ${
+        player.name
+      }</span> <button class="delete-button px-3 py-1"><i class="fa-solid fa-xmark fa-lg text-red-600"></i></button>`;
       PlayerListEl.appendChild(PlayerEl);
     });
   }
@@ -42,7 +45,6 @@ class PlayerList {
     list.forEach((player, index) => {
       teams[index % numberOfTeams].push(player.name);
     });
-    console.log(teams);
     this.displayTeams(teams);
     return teams;
   }
@@ -72,8 +74,28 @@ class PlayerList {
     // @todo Different color for each team
     // Create team element for each team in list
     teams.forEach((team) => {
+      let borderColorClass;
+      let bgColorClass;
+      switch (teamCount) {
+        case 1:
+          borderColorClass = 'border-red-400';
+          bgColorClass = 'bg-red-300';
+          break;
+        case 2:
+          borderColorClass = 'border-blue-400';
+          bgColorClass = 'bg-blue-300';
+          break;
+        case 3:
+          borderColorClass = 'border-yellow-400';
+          bgColorClass = 'bg-yellow-300';
+          break;
+        case 4:
+          borderColorClass = 'border-green-400';
+          bgColorClass = 'bg-green-300';
+          break;
+      }
       const TeamEl = document.createElement('div');
-      TeamEl.classList.add('team-el');
+      TeamEl.classList.add('team-el', borderColorClass, bgColorClass);
       const TeamNameEl = document.createElement('h1');
       TeamNameEl.classList.add('text-xl', 'font-bold', 'p-1');
       TeamNameEl.innerText = `Team ${teamCount}`;
