@@ -11,15 +11,19 @@ class PlayerList {
     const newPlayer = new Player(name, sex);
     this.list.push(newPlayer);
     Storage.savePlayer(newPlayer);
+    this._displayPlayerList();
   }
   removePlayerFromList(id) {
     Storage.removePlayer(id);
+    this._displayPlayerList();
   }
 
   _displayPlayerList() {
     const PlayerListEl = document.getElementById('player-list');
+    PlayerListEl.innerHTML = '';
     this.list.forEach((player) => {
       const PlayerEl = document.createElement('div');
+      PlayerEl.setAttribute('data-id', `${player.id}`);
       PlayerEl.classList.add(
         'border',
         'flex',

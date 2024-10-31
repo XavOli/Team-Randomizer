@@ -16,10 +16,16 @@ class App {
 
   playerSubmit(e) {
     e.preventDefault();
-    console.log('Player submitted');
+    const name = document.getElementById('player-name').value;
+    const sex = document.querySelector('input[name="sex"]:checked').value;
+    if (!name) {
+      alert('Please enter a player name');
+      return;
+    }
+    app._list.addPlayerToList(name, sex);
   }
 }
 
 const app = new App();
-// app._list.addPlayerToList('Eve', '<Female></Female>');
+// app._list.addPlayerToList('Xavier', 'Male');
 // app._list.removePlayerFromList('c5ee73e44ae58');
