@@ -70,8 +70,12 @@ class PlayerList {
     const ResultsEl = document.getElementById('shuffle-results');
     ResultsEl.innerHTML = '';
     let teamCount = 1;
+    if (teams.length === 1) {
+      ResultsEl.classList.replace('grid-cols-2', 'grid-cols-1');
+    } else {
+      ResultsEl.classList.replace('grid-cols-1', 'grid-cols-2');
+    }
 
-    // @todo Different color for each team
     // Create team element for each team in list
     teams.forEach((team) => {
       let borderColorClass;

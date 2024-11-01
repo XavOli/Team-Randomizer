@@ -8,19 +8,21 @@
   </head>
   <body class="h-screen">
     <!-- Global container -->
-    <div class="flex items-center justify-center min-h-screen bg-gray-50">
+    <div class="flex items-center justify-center h-screen bg-gray-50">
       <!-- Card container -->
-      <div class="flex flex-col bg-white rounded-lg h-screen lg:h-full border-2 w-full lg:max-w-7xl  m-2 shadow-lg">
+      <div class="h-full flex-1 flex flex-col bg-white rounded-lg  border-2 w-full lg:h-5/6 lg:max-w-7xl  m-2 shadow-lg">
         <!-- Title of page -->
-        <div class="w-full text-center text-3xl lg:text-6xl p-4">My Team Randomizer</div>
+        <div class="w-full h-20 lg:h-40 items-center text-center font-bold text-3xl lg:text-6xl p-4 justify-center flex">
+          <div>My Team Randomizer</div>
+        </div>
 
         <!-- Players and results-->
-        <div class="h-72 w-100 flex flex-col lg:flex-row   justify-between flex-1 bg-slate-100">
+        <div class="h-full flex flex-col lg:flex-row   justify-between bg-slate-100">
           <!-- Player input and list -->
           <div class="flex flex-col w-full lg:w-1/2 h-full p-5 items-center border-b-2 lg:border-b-0 lg:border-r-2">
 
             <!-- Input form -->
-            <form id="player-form" class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 items-center justify-center">
+            <form id="player-form" class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 items-center justify-center p-4">
               <div class="flex items-center justify-center space-x-2 lg:space-x-4 ">
                 <!-- Player name input -->
                 <input
@@ -54,7 +56,7 @@
           </div>
 
           <!-- Player results -->
-          <div class="flex flex-col w-full lg:w-1/2 h-full p-5 items-center overflow-auto">
+          <div class="flex flex-col w-full lg:w-1/2 h-full p-5 items-center">
             <div id="shuffle-results" class="grid grid-cols-2 w-full h-full text-center gap-2">
               <!-- Results get inserted her -->
             </div>
@@ -62,7 +64,7 @@
         </div>
 
         <!-- Options -->
-        <div class="min-h-24 flex justify-center items-center pb-4">
+        <div class="flex justify-center items-center py-4">
           <form id="options-form" class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10">
 
             <!-- Shuffle type option -->
