@@ -545,8 +545,12 @@ video {
 .grid {
   display: grid;
 }
-.h-72 {
-  height: 18rem;
+.h-20 {
+  height: 5rem;
+}
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .h-full {
   height: 100%;
@@ -554,17 +558,14 @@ video {
 .h-screen {
   height: 100vh;
 }
-.min-h-24 {
-  min-height: 6rem;
-}
-.min-h-screen {
-  min-height: 100vh;
-}
 .w-full {
   width: 100%;
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -592,15 +593,6 @@ video {
   margin-left: calc(0.5rem * (1 - var(--tw-space-x-reverse)));
   margin-left: calc(0.5rem * calc(1 - 0));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * (1 - 0));
-  margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse)));
-  margin-top: calc(0.5rem * calc(1 - 0));
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * 0);
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -728,7 +720,8 @@ video {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.pb-4 {
+.py-4 {
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 .text-center {
@@ -795,8 +788,16 @@ video {
 
 @media (min-width: 1024px) {
 
-  .lg\:h-full {
-    height: 100%;
+  .lg\:h-4\/6 {
+    height: 66.666667%;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
+  }
+
+  .lg\:h-screen {
+    height: 100vh;
   }
 
   .lg\:w-1\/2 {
