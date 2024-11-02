@@ -24,7 +24,7 @@ class App {
     e.preventDefault();
     const name = document.getElementById('player-name');
     const sex = document.querySelector('input[name="sex"]:checked').value;
-    if (!name) {
+    if (!name.value) {
       alert('Please enter a player name');
       return;
     }
