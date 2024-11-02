@@ -29,6 +29,7 @@
                 type="text"
                 class="border border-black text-center p-2"
                 id="player-name"
+                aria-label="Player Name"
                 name="item"
                 placeholder="Enter Player Name"
                 />
@@ -83,7 +84,7 @@
             <div class="flex flex-col">
               <legend class="text-center">Number of teams:</legend>
               <div class="flex items-center">
-                <input type="range" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-3/4" oninput="num.value = this.value">
+                <input type="range" aria-label="Number of teams" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-3/4" oninput="num.value = this.value">
                 <output id="num" class="w-1/4 text-right">2</output>
               </div>
               <!-- <input type="number" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-full"> -->
