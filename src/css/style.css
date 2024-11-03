@@ -9,5 +9,5 @@
 }
 
 .team-el {
-  @apply flex flex-col border  rounded items-center justify-center p-1;
+  @apply flex flex-col border rounded items-center justify-center p-1 text-xl;
 }

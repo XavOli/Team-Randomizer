@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Randomizer</title>
   </head>
-  <body class="h-screen bg-slate-50">
-    <!-- Global container -->
-    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen relative">
+  <body class="h-screen bg-violet-200">
+    <!-- Card container -->
+    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen relative font-poppins">
 
       <!--@todo How it works menu -->
-      <div class="hidden absolute bg-black text-white flex flex-col items-center justify-center shadow-2xl m-2 rounded-lg ">
-        <div class="bg-black text-black p-2 text-center">
-          <div>How it works:</div>
+      <div class="hidden absolute w-1/5 bg-black text-white flex flex-col items-center justify-center shadow-2xl m-2 rounded-lg ">
+        <div class=" p-2 text-center">
+          <div class="text-xl">How it works:</div>
           <div>Add players to list by writing their name and selecting a sex.</div>
           <div>Select a shuffle type.</div>
           <div>Random shuffle will fully shuffle the player list.</div>
@@ -23,19 +23,20 @@
         </div>
       </div>
 
-      <!-- Card container -->
-      <div class="flex flex-col flex-1  h-full lg:h-5/6 lg:max-w-7xl  bg-slate-200 rounded-lg   m-2 shadow-2xl font-poppins">
+      <!-- Content container -->
+      <div class="flex flex-col flex-1  h-full lg:h-5/6 lg:max-w-7xl  bg-violet-50 rounded-lg   m-2 shadow-lg ">
         <!-- Title of page -->
         <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4 ">
           <div class="font-bold text-3xl lg:text-6xl">Team Randomizer</div>
         </div>
 
         <!-- Players and results-->
-        <div class="h-full flex flex-col lg:flex-row   justify-between bg-slate-100">
+        <div class="h-full flex flex-col lg:flex-row   justify-between bg-violet-100">
           <!-- Player input and list -->
           <div class="flex flex-col items-center h-full lg:w-1/2 p-5 border-b-2 lg:border-b-0 lg:border-r-2">
 
             <!-- Input form -->
+
             <form id="player-form" class="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4  p-4">
               <div class="flex items-center justify-center space-x-2 lg:space-x-4 ">
                 <!-- Player name input -->
@@ -80,6 +81,7 @@
 
         <!-- Options -->
         <div class="flex justify-center items-center py-4">
+                
           <form id="options-form" class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10">
 
             <!-- Shuffle type option -->
@@ -98,7 +100,7 @@
             <div class="flex flex-col">
               <legend class="text-center">Number of teams:</legend>
               <div class="flex items-center">
-                <input type="range" aria-label="Number of teams" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-3/4" oninput="num.value = this.value">
+                <input type="range" aria-label="Number of teams" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-violet-100 w-3/4" oninput="num.value = this.value">
                 <output id="num" class="w-1/4 text-right">2</output>
               </div>
               <!-- <input type="number" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-full"> -->
