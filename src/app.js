@@ -29,7 +29,7 @@ class App {
       return;
     }
     app._list.addPlayerToList(name.value.trim(), sex);
-    document.getElementById('player-form').reset();
+    name.value = '';
   }
 
   _removePlayer(e) {

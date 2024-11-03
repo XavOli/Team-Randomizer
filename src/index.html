@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Randomizer</title>
   </head>
-  <body class="h-screen bg-volley bg-cover">
+  <body class="h-screen bg-slate-50">
     <!-- Global container -->
-    <div class="flex items-center justify-center h-fit lg:h-screen  ">
+    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen relative">
+
+      <!--@todo How it works menu -->
+      <div class="hidden absolute bg-black text-white flex flex-col items-center justify-center shadow-2xl m-2 rounded-lg ">
+        <div class="bg-black text-black p-2 text-center">
+          <div>How it works:</div>
+          <div>Add players to list by writing their name and selecting a sex.</div>
+          <div>Select a shuffle type.</div>
+          <div>Random shuffle will fully shuffle the player list.</div>
+          <div>Shuffle by sex will shuffle the player list and separate each sex equally between teams.</div>
+          <div>Select a number of teams (from 1 to 4).</div>
+          <div>Shuffle!</div>
+        </div>
+      </div>
+      
       <!-- Card container -->
-      <div class="flex flex-col flex-1  h-full lg:h-4/6 lg:max-w-7xl  bg-[#fcf1e6] rounded-lg  border-2  m-2 shadow-lg">
+      <div class="flex flex-col flex-1  h-full lg:h-4/6 lg:max-w-7xl  bg-[#fcf1e6] rounded-lg  border-2  m-2 shadow-2xl">
         <!-- Title of page -->
         <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4 ">
           <div class="font-bold text-3xl lg:text-6xl">Team Randomizer</div>
