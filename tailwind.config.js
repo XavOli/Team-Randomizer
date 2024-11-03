@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         volley: "url('../img/volleyball.jpg')",
       },
+      fontFamily: {
+        poppins: ['Poppins'],
+      },
     },
   },
   variants: {
