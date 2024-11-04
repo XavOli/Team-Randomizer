@@ -638,6 +638,9 @@ video {
 .border {
   border-width: 1px;
 }
+.border-4 {
+  border-width: 4px;
+}
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -660,6 +663,11 @@ video {
   --tw-border-opacity: 1;
   border-color: rgba(248, 113, 113, 1);
   border-color: rgba(248, 113, 113, var(--tw-border-opacity));
+}
+.border-slate-50 {
+  --tw-border-opacity: 1;
+  border-color: rgba(248, 250, 252, 1);
+  border-color: rgba(248, 250, 252, var(--tw-border-opacity));
 }
 .border-yellow-400 {
   --tw-border-opacity: 1;
@@ -706,6 +714,11 @@ video {
   background-color: rgba(245, 243, 255, 1);
   background-color: rgba(245, 243, 255, var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgba(253, 224, 71, 1);
@@ -737,14 +750,6 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
 .text-center {
   text-align: center;
 }
@@ -753,6 +758,10 @@ video {
 }
 .font-poppins {
   font-family: Poppins;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -800,6 +809,8 @@ video {
   background-color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   padding-left: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .team-el {
@@ -808,10 +819,33 @@ video {
   align-items: center;
   justify-content: center;
   border-radius: 0.25rem;
-  border-width: 1px;
+  border-width: 4px;
   padding: 0.25rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+
+  .team-el {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.team-name {
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+
+  .team-name {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -827,12 +861,9 @@ video {
     height: 10rem;
   }
 
-  .lg\:h-5\/6 {
-    height: 83.333333%;
-  }
-
-  .lg\:h-screen {
-    height: 100vh;
+  .lg\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .lg\:w-1\/2 {
@@ -841,10 +872,6 @@ video {
 
   .lg\:max-w-7xl {
     max-width: 80rem;
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:flex-row {

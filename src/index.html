@@ -8,7 +8,7 @@
   </head>
   <body class="h-screen bg-violet-200">
     <!-- Card container -->
-    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen relative font-poppins">
+    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-fit relative font-poppins">
 
       <!--@todo How it works menu -->
       <div class="hidden absolute w-1/5 bg-black text-white flex flex-col items-center justify-center shadow-2xl m-2 rounded-lg ">
@@ -24,7 +24,7 @@
       </div>
 
       <!-- Content container -->
-      <div class="flex flex-col flex-1  h-full lg:h-5/6 lg:max-w-7xl  bg-violet-50 rounded-lg   m-2 shadow-lg ">
+      <div class="flex flex-col flex-1  h-full lg:max-w-7xl  bg-violet-50 rounded-lg   m-2 shadow-lg ">
         <!-- Title of page -->
         <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4 ">
           <div class="font-bold text-3xl lg:text-6xl">Team Randomizer</div>
@@ -66,17 +66,19 @@
             </form> 
 
             <!-- Player list -->
-            <div id="player-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full text-center m-2 overflow-auto gap-2">
+            <div id="player-list" class="grid grid-cols-2 md:grid-cols-3 w-full text-center m-2 overflow-auto gap-2">
               <!-- List gets inserted here -->
             </div>
           </div>
 
           <!-- Player results -->
-          <div class="flex flex-col w-full lg:w-1/2 h-full p-5 items-center">
-            <div id="shuffle-results" class="grid grid-cols-2 w-full h-full text-center gap-2">
-              <!-- Results get inserted her -->
+          <div id="shuffle-results" class="grid grid-cols-1 w-full lg:w-1/2 h-full text-center gap-2 p-5">
+            <div class="text-2xl border-4 border-slate-50 bg-white">
+              Your result will be displayed here.
             </div>
+            <!-- Results get inserted her -->
           </div>
+ 
         </div>
 
         <!-- Options -->
@@ -107,12 +109,8 @@
               <!-- Submit button -->
               <input type="submit" value="Shuffle!" class="rounded-md  p-3 bg-gradient-to-r from-[#cdd2da] to-[#e0e5ed]">
             </form>
-                
- 
-
         </div>
       </div>
     </div>
-  
   </body>
 </html>

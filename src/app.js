@@ -54,6 +54,10 @@ class App {
       'input[name="shuffle"]:checked'
     ).value;
     const numberOfTeams = document.getElementById('numberOfTeams').value;
+    if (this._list.length < numberOfTeams) {
+      alert('You will need more players to make that many teams!');
+      return;
+    }
 
     if (shuffleType === 'random') {
       this._list.splitIntoTeams(
