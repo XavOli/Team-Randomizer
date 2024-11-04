@@ -8,7 +8,7 @@
   </head>
   <body class="h-screen bg-violet-200">
     <!-- Card container -->
-    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen border-2 relative font-poppins">
+    <div class="flex flex-col lg:flex-row items-center justify-center h-fit lg:h-screen relative font-poppins">
 
       <!--@todo How it works menu -->
       <div class="hidden absolute w-1/5 bg-black text-white flex flex-col items-center justify-center shadow-2xl m-2 rounded-lg ">
@@ -80,35 +80,35 @@
         </div>
 
         <!-- Options -->
-        <div class="flex justify-center items-center py-4">
-                
-          <form id="options-form" class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10">
+        <div class="flex justify-center items-center my-2">
+            <form id="options-form" class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10">
 
-            <!-- Shuffle type option -->
-            <fieldset>
-              <legend class="text-center">Shuffle type</legend>
-            
-              <input type="radio" name="shuffle" value="random" id="random_shuffle" checked="checked">
-              <label for="random_shuffle">Random shuffle</label>
-            
-              <input type="radio" name="shuffle" value="bySex" id="sex_shuffle">
-              <label for="sex_shuffle">Shuffle by sex</label>
-            
-            </fieldset>
-
-            <!-- Number of teams option -->
-            <div class="flex flex-col">
-              <legend class="text-center">Number of teams:</legend>
-              <div class="flex items-center">
-                <input type="range" aria-label="Number of teams" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-violet-100 w-3/4" oninput="num.value = this.value">
-                <output id="num" class="w-1/4 text-right">2</output>
+              <!-- Shuffle type option -->
+              <fieldset>
+                <legend class="text-center">Shuffle type</legend>
+              
+                <input type="radio" name="shuffle" value="random" id="random_shuffle" checked="checked">
+                <label for="random_shuffle">Random shuffle</label>
+              
+                <input type="radio" name="shuffle" value="bySex" id="sex_shuffle">
+                <label for="sex_shuffle">Shuffle by sex</label>
+              
+              </fieldset>
+  
+              <!-- Number of teams option -->
+              <div class="flex flex-col ">
+                <legend class="text-center">Number of teams:</legend>
+                <div class="flex items-center">
+                  <input type="range" aria-label="Number of teams" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-violet-100 w-3/4" oninput="num.value = this.value">
+                  <output id="num" class="w-1/4 text-right">2</output>
+                </div>
+                <!-- <input type="number" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-full"> -->
               </div>
-              <!-- <input type="number" value="2" id="numberOfTeams" name="quantity" min="1" max="4" class="bg-slate-100 w-full"> -->
-            </div>
-
-            <!-- Submit button -->
-            <input type="submit" value="Shuffle!" class="rounded-md  p-3 bg-gradient-to-r from-[#cdd2da] to-[#e0e5ed] ">
-          </form>
+              <!-- Submit button -->
+              <input type="submit" value="Shuffle!" class="rounded-md  p-3 bg-gradient-to-r from-[#cdd2da] to-[#e0e5ed]">
+            </form>
+                
+ 
 
         </div>
       </div>

@@ -546,6 +546,10 @@ video {
 .m-2 {
   margin: 0.5rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .flex {
   display: flex;
 }
@@ -633,9 +637,6 @@ video {
 }
 .border {
   border-width: 1px;
-}
-.border-2 {
-  border-width: 2px;
 }
 .border-b-2 {
   border-bottom-width: 2px;
@@ -743,10 +744,6 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 .text-center {
   text-align: center;
