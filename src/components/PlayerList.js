@@ -44,6 +44,10 @@ class PlayerList {
       <button class="delete-button p-1"><i class="fa-solid fa-xmark fa-lg text-red-600"></i></button>`;
       PlayerListEl.appendChild(PlayerEl);
     });
+    // Update player count in DOM
+    document.getElementById(
+      'player-count'
+    ).innerHTML = `Player count: ${this.list.length}`;
   }
 
   splitIntoTeams(list, numberOfTeams) {

@@ -26,8 +26,8 @@
       <!-- Content container -->
       <div class="flex flex-col flex-1 lg:max-w-7xl  max-w-[98%] bg-violet-50 rounded-lg lg:m-2 shadow-lg ">
         <!-- Title of page -->
-        <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4 ">
-          <div class="font-bold text-3xl lg:text-6xl">Team Randomizer</div>
+        <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4">
+          <p class="font-bold text-3xl lg:text-6xl">Team Randomizer</p>
         </div>
 
         <!-- Players and results-->
@@ -37,7 +37,7 @@
 
             <!-- Input form -->
 
-            <form id="player-form" class="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4  p-4">
+            <form id="player-form" class="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 p-4">
               <div class="flex items-center justify-center space-x-2 lg:space-x-4 ">
                 <!-- Player name input -->
                 <input
@@ -67,16 +67,19 @@
 
             <!-- Player list -->
             <div id="player-list" class="grid grid-cols-2 md:grid-cols-3 w-full text-center gap-2">
-              <!-- List gets inserted here -->
+              <!-- Player list gets inserted here -->
+            </div>
+            <div id="player-count" class="text-left w-full pt-4">
+              <!-- Player count gets inserted here -->
             </div>
           </div>
 
           <!-- Player results -->
-          <div id="shuffle-results" class="grid grid-cols-1 w-full lg:w-1/2 h-full text-center gap-2 p-5">
+          <div id="shuffle-results" class="grid grid-cols-1 w-full lg:w-1/2 h-full text-center gap-2 p-2 lg:p-5">
             <div class="text-2xl border-4 border-slate-50 bg-white">
               Your result will be displayed here.
             </div>
-            <!-- Results get inserted her -->
+            <!-- Shuffle results get inserted her -->
           </div>
           
         </div>
