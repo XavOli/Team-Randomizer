@@ -568,6 +568,9 @@ video {
 .w-1\/5 {
   width: 20%;
 }
+.w-3\/5 {
+  width: 60%;
+}
 .w-full {
   width: 100%;
 }
@@ -764,6 +767,10 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -849,6 +856,11 @@ video {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
