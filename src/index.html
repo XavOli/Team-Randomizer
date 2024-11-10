@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Randomizer</title>
   </head>
-  <body class="h-screen bg-violet-200">
+  <body class="h-screen bg-secondary text-white">
     <!-- Card container -->
     <div
       class="flex flex-col lg:flex-row items-center justify-center h-fit relative font-poppins p-2"
@@ -33,20 +33,22 @@
 
       <!-- Content container -->
       <div
-        class="flex flex-col flex-1 lg:max-w-7xl max-w-[98%] bg-violet-50 rounded-lg lg:m-2 shadow-lg"
+        class="flex flex-col flex-1 lg:max-w-7xl w-[99%] md:w-[75%] bg-tertiaryDark rounded-lg lg:m-2 shadow-lg"
       >
         <!-- Title of page -->
         <div class="w-full h-20 lg:h-40 flex items-center justify-center p-4">
-          <p class="font-bold text-3xl lg:text-6xl">Team Randomizer</p>
+          <p class="font-bold text-3xl lg:text-6xl text-white">
+            Team Randomizer
+          </p>
         </div>
 
         <!-- Players and results-->
         <div
-          class="h-full flex flex-col lg:flex-row justify-between bg-violet-100"
+          class="h-full flex flex-col lg:flex-row justify-between bg-primary"
         >
           <!-- Player input and list -->
           <div
-            class="flex flex-col items-center h-full lg:w-1/2 p-5 border-b-2 lg:border-b-0 lg:border-r-2"
+            class="flex flex-col items-center h-full lg:w-1/2 p-5 border-b-2 lg:border-b-0"
           >
             <!-- Input form -->
 
@@ -60,7 +62,7 @@
                 <!-- Player name input -->
                 <input
                   type="text"
-                  class="border border-black text-center p-2 w-3/5 text-sm md:text-lg"
+                  class="border border-secondary text-center p-2 w-3/5 text-sm md:text-lg bg-tertiaryLight"
                   id="player-name"
                   aria-label="Player Name"
                   name="item"
@@ -77,18 +79,18 @@
                     checked="checked"
                   />
                   <label for="male"
-                    ><i class="fa-solid fa-mars fa-xl"></i
+                    ><i class="fa-solid fa-mars fa-xl text-white"></i
                   ></label>
                 </div>
                 <div>
                   <input type="radio" id="female" name="sex" value="female" />
                   <label for="female"
-                    ><i class="fa-solid fa-venus fa-xl"></i
+                    ><i class="fa-solid fa-venus fa-xl text-white"></i
                   ></label>
                 </div>
               </div>
               <!-- Submit button -->
-              <button type="submit" class="rounded-md bg-slate-100 p-2">
+              <button type="submit" class="rounded-md bg-tertiaryLight p-2">
                 Add Player
               </button>
             </form>
@@ -110,7 +112,7 @@
             id="shuffle-results"
             class="grid grid-cols-1 w-full lg:w-1/2 h-full text-center gap-2 p-2 lg:p-5"
           >
-            <div class="text-2xl border-4 border-slate-50 bg-white">
+            <div class="text-2xl p-2 bg-tertiaryLight rounded-xl">
               Your result will be displayed here.
             </div>
             <!-- Shuffle results get inserted her -->
@@ -124,7 +126,7 @@
             class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-10"
           >
             <!-- Shuffle type option -->
-            <fieldset>
+            <fieldset class="text-white">
               <legend class="text-center">Shuffle type</legend>
 
               <input
@@ -157,7 +159,7 @@
                   name="quantity"
                   min="1"
                   max="4"
-                  class="bg-violet-100"
+                  class="bg-orange-500 accent-white"
                   oninput="num.value = this.value"
                 />
                 <output id="num" class="pl-2 text-right">2</output>
@@ -168,7 +170,7 @@
             <input
               type="submit"
               value="Shuffle!"
-              class="rounded-md p-2 bg-gradient-to-r from-[#cdd2da] to-[#e0e5ed]"
+              class="rounded-md p-2 bg-tertiaryLight"
             />
           </form>
         </div>
