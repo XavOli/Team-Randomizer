@@ -1,6 +1,7 @@
 import './css/style.css';
 import '@fortawesome/fontawesome-free/js/all';
 import PlayerList from './components/PlayerList';
+import html2canvas from 'html2canvas';
 
 class App {
   constructor() {
@@ -18,6 +19,9 @@ class App {
     document
       .getElementById('options-form')
       .addEventListener('submit', this._shuffleSubmit.bind(this));
+    document
+      .getElementById('shuffle-results')
+      .addEventListener('click', this._exportResults.bind(this));
   }
 
   _playerSubmit(e) {
@@ -70,7 +74,21 @@ class App {
         numberOfTeams
       );
     }
-    console.log(shuffleType, numberOfTeams);
+  }
+
+  _exportResults(e) {
+    console.log(e.target);
+    if (e.target.classList.contains('myBtn')) {
+      html2canvas(document.getElementById('shuffle-results'), {
+        backgroundColor: '#070F2B',
+      }).then((canvas) => {
+        const dataURL = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.download = 'results.png';
+        link.href = dataURL;
+        link.click();
+      });
+    }
   }
 }
 

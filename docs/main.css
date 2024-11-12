@@ -543,6 +543,9 @@ video {
 .relative {
   position: relative;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .flex {
   display: flex;
 }
@@ -621,9 +624,6 @@ video {
 }
 .rounded-lg {
   border-radius: 0.5rem;
-}
-.rounded-md {
-  border-radius: 0.375rem;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -767,6 +767,11 @@ video {
 .font-bold {
   font-weight: 700;
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgba(220, 38, 38, 1);
@@ -828,7 +833,8 @@ input::placeholder {
   justify-content: center;
   border-radius: 0.25rem;
   border-width: 4px;
-  padding: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
@@ -857,6 +863,14 @@ input::placeholder {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+}
+
+.myBtn {
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(146, 144, 195, 1);
+  background-color: rgba(146, 144, 195, var(--tw-bg-opacity));
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {

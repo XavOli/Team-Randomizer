@@ -132,6 +132,11 @@ class PlayerList {
 
       ResultsEl.appendChild(TeamEl);
     });
+    const downloadBtn = document.createElement('button');
+    downloadBtn.classList.add('myBtn', 'col-span-2', 'text-xl', 'text-black');
+    downloadBtn.innerText = 'Save my results!';
+    downloadBtn.setAttribute('data-html2canvas-ignore', 'true');
+    ResultsEl.appendChild(downloadBtn);
   }
 }
 

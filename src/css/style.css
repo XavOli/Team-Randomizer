@@ -13,9 +13,13 @@ input::placeholder {
 }
 
 .team-el {
-  @apply flex flex-col border-4 rounded items-center justify-center p-1 text-xl lg:text-2xl text-black;
+  @apply flex flex-col border-4 rounded items-center justify-center pt-2 pb-4 text-xl lg:text-2xl text-black;
 }
 
 .team-name {
   @apply text-xl lg:text-3xl font-bold p-1;
+}
+
+.myBtn {
+  @apply rounded-md p-2 bg-tertiaryLight;
 }
