@@ -24,6 +24,22 @@ class Storage {
     });
     localStorage.setItem('playerList', JSON.stringify(playerList));
   }
+
+  static getRecentTeams() {
+    let teamsList;
+    if (localStorage.getItem('teamsList') === null) {
+      teamsList = [];
+    } else {
+      teamsList = JSON.parse(localStorage.getItem('teamsList'));
+    }
+    return teamsList;
+  }
+
+  static saveTeams(teams) {
+    const teamsHistory = this.getRecentTeams();
+    teamsHistory.push(teams[0]);
+    localStorage.setItem('teamsList', JSON.stringify(teamsHistory));
+  }
 }
 
 export default Storage;

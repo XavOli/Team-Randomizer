@@ -1,14 +1,23 @@
 import './css/style.css';
 import '@fortawesome/fontawesome-free/js/all';
 import PlayerList from './components/PlayerList';
+import Teams from './components/Teams';
 import html2canvas from 'html2canvas';
 
 class App {
   constructor() {
     this._list = new PlayerList();
-    this.addEventListeners();
+    this._teams = new Teams();
+    this.init();
   }
 
+  init() {
+    this.addEventListeners();
+    console.log(this._teams.recentTeams.length);
+    if (this._teams.recentTeams.length !== 0) {
+      document.getElementById('rewind-time').classList.remove('hidden');
+    }
+  }
   addEventListeners() {
     document
       .getElementById('player-form')
@@ -22,8 +31,13 @@ class App {
     document
       .getElementById('shuffle-results')
       .addEventListener('click', this._exportResults.bind(this));
+    document
+      .getElementById('rewind-time')
+      .addEventListener('click', this._rewindTime.bind(this));
   }
-
+  _rewindTime() {
+    this._teams.showLastResults();
+  }
   _playerSubmit(e) {
     e.preventDefault();
     const name = document.getElementById('player-name');
@@ -37,7 +51,6 @@ class App {
   }
 
   _removePlayer(e) {
-    console.log(e.target);
     if (
       e.target.classList.contains('delete-button') ||
       e.target.classList.contains('fa-xmark') ||
@@ -54,6 +67,7 @@ class App {
 
   _shuffleSubmit(e) {
     e.preventDefault();
+    const teams = new Teams();
     const shuffleType = document.querySelector(
       'input[name="shuffle"]:checked'
     ).value;
@@ -64,20 +78,13 @@ class App {
     }
 
     if (shuffleType === 'random') {
-      this._list.splitIntoTeams(
-        this._list.shuffleListAll(this._list.list),
-        numberOfTeams
-      );
+      teams.splitIntoTeams(teams.shuffleListAll(), numberOfTeams);
     } else {
-      this._list.splitIntoTeams(
-        this._list.shuffeListBySex(this._list.list),
-        numberOfTeams
-      );
+      teams.splitIntoTeams(teams.shuffeListBySex(), numberOfTeams);
     }
   }
 
   _exportResults(e) {
-    console.log(e.target);
     if (e.target.classList.contains('myBtn')) {
       html2canvas(document.getElementById('shuffle-results'), {
         backgroundColor: '#070F2B',
